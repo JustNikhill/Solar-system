@@ -1,11 +1,14 @@
+// Developer - JustNikhill
+// LinkedIn - https://www.linkedin.com/in/nikhil-yadav-609435203/
+// HackerRank - https://www.hackerrank.com/JustNikhil?hr_r=1
+
 let sun;
 let cam;
 
 let sunTexture;
 const textures = [];
 
-// Because of the asynchronous nature of file loading in JavaScript, we
-// have to load the images in p5.js' preload() instead of in setup().
+// load the images in p5.js' preload() instead of in setup().
 function preload() {
   sunTexture = loadImage('data/sun.jpg');
   textures[0] = loadImage('data/mars.jpg');
@@ -15,7 +18,9 @@ function preload() {
 
 function setup() {
   let canvas = createCanvas(600, 600, WEBGL);
+  
   // Disable the context menu on the canvas so the camera can use the right mouse button
+  
   canvas.elt.oncontextmenu = () => false;
 
   cam = createEasyCam({ distance: 500 });
