@@ -1,3 +1,6 @@
+// Developer - JustNikhill
+// LinkedIn - https://www.linkedin.com/in/nikhil-yadav-609435203/
+// HackerRank - https://www.hackerrank.com/JustNikhil?hr_r=1
 class Planet {
     constructor(r, d, o, img) {
       this.v = p5.Vector.random3D();
@@ -10,8 +13,7 @@ class Planet {
   
       this.planets = null;
   
-      // Since there is no direct equivalent of PShape in p5.js, we have
-      // to save the texture for later use instead of creating a globe.
+      //  save the texture for later use instead of creating a globe.
       this.texture = img;
     }
   
@@ -44,21 +46,27 @@ class Planet {
       noStroke();
       let v2 = createVector(1, 0, 1);
       let p = this.v.cross(v2);
+        
       // Rotation around a 0-length axis doesn't work in p5.js, so don't do that.
+        
       if (p.x != 0 || p.y != 0 || p.z != 0) {
         rotate(this.angle, p);
       }
       stroke(255);
-      //line(0, 0, 0, this.v.x, this.v.y, this.v.z);
-      //line(0, 0, 0, p.x, p.y, p.z);
+        
+                    //line(0, 0, 0, this.v.x, this.v.y, this.v.z);
+                    //line(0, 0, 0, p.x, p.y, p.z);
   
       translate(this.v.x, this.v.y, this.v.z);
       noStroke();
       fill(255);
+        
       // Since we don't have a PShape, we draw a textured sphere instead.
+        
       texture(this.texture);
       sphere(this.radius);
-      //ellipse(0, 0, this.radius * 2, this.radius * 2);
+       
+        
       if (this.planets != null) {
         for (let i = 0; i < this.planets.length; i++) {
           this.planets[i].show();
